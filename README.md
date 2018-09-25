@@ -15,7 +15,7 @@ function middleware() {
 }
 
 function afterware(response) {
-	if(response.statusCode === 200) {
+	if(response.status === 200) {
 		console.log('OK');
 	} else {
 		console.log('NOT OK');
