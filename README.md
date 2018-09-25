@@ -1,6 +1,6 @@
 # GraphQL Fetch
 
-
+## Example
 ```javascript
 import gqlFetch from 'gql-fetch';
 
