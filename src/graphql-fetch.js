@@ -8,10 +8,10 @@ const getBody = (body, middleware = {}) => ({
 
 async function customFetch(url, middleware, body, afterware) {
 	try {
-		let bodyOptions = isFunction(middleware) ? getBody(body, middleware()) : getBody(body),
+		let bodyOptions = isFunction(middleware) ? await getBody(body, middleware()) : getBody(body),
 			response = await fetch(url, bodyOptions);
 
-		isFunction(afterware) && isFunction(response);
+		isFunction(afterware) && afterware(response);
 
 		return await response.json();
 	} catch(error) {
