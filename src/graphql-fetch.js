@@ -15,7 +15,7 @@ async function customFetch(url, middleware, body, afterware) {
 
 		return await response.json();
 	} catch(error) {
-		return Promise.reject();
+		return Promise.reject(error);
 	}
 }
 
